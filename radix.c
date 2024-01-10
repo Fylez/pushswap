@@ -6,7 +6,7 @@
 /*   By: lzaengel <lzaengel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 22:18:54 by lzaengel          #+#    #+#             */
-/*   Updated: 2024/01/10 23:10:40 by lzaengel         ###   ########.fr       */
+/*   Updated: 2024/01/11 00:34:10 by lzaengel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,9 +118,9 @@ void	radixsort(t_list **lst, t_list **lst2)
 
 	i[0] = 0;
 	temp = *lst;
-	mbits = ft_bits(*lst);
 	min = ft_min(*lst);
 	ft_lstsimple(*lst, min);
+	mbits = ft_bits(*lst);
 	while (i[0] < mbits)
 	{
 		max = ft_lstsize(*lst);
@@ -134,7 +134,7 @@ void	radixsort(t_list **lst, t_list **lst2)
 			}
 			else
 			{
-				pa(lst, lst2);
+				pb(lst, lst2);
 			}
 			temp = *lst;
 		}

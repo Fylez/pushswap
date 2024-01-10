@@ -6,7 +6,7 @@
 /*   By: lzaengel <lzaengel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 21:21:47 by lzaengel          #+#    #+#             */
-/*   Updated: 2024/01/10 22:44:54 by lzaengel         ###   ########.fr       */
+/*   Updated: 2024/01/11 00:07:19 by lzaengel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ void	ft_exit(t_list *lst, char *reason)
 	{
 		exit(0);
 	}
-
-	ft_printf ("%s\n", reason);
+	if(reason)
+		ft_printf ("%s\n", reason);
 	while (lst != NULL)
 	{
 		next = lst->next;
@@ -69,5 +69,5 @@ int	main(int argc, char **argv)
 	ft_lstprint(list_a);
 	ft_printf("LIST B\n");
 	ft_lstprint(list_b);
-	ft_exit(list_a, "EOP");
+	ft_exit(list_a, 0);
 }
