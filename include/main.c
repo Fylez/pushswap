@@ -6,7 +6,7 @@
 /*   By: lzaengel <lzaengel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 21:21:47 by lzaengel          #+#    #+#             */
-/*   Updated: 2024/01/11 21:04:23 by lzaengel         ###   ########.fr       */
+/*   Updated: 2024/01/11 23:36:41 by lzaengel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,22 @@ void	ft_exit(t_list *lst, char *reason)
 		lst = next;
 	}
 	exit(0);
+}
+
+int	is_sorted(t_list *lst)
+{
+	t_list	*node;
+	t_list	*next;
+
+	node = lst;
+	while (node -> next)
+	{
+		next = node-> next;
+		if (node -> content > next -> content)
+			return (0);
+		node = next;
+	}
+	return (1);
 }
 
 void	checkdup(t_list *lst)
@@ -101,7 +117,12 @@ int	main(int argc, char **argv)
 		j++;
 	}
 	checkdup(list_a);
-	radixsort(&list_a, &list_b);
+	if (is_sorted(list_a) == 1)
+		ft_exit(list_a, 0);
+	if (ft_lstsize(list_a) > 3)
+		radixsort(&list_a, &list_b);
+	else
+		three_numbers(&list_a);
 	ft_lstprint(list_a);
 	ft_exit(list_a, 0);
 }
