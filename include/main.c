@@ -6,7 +6,7 @@
 /*   By: lzaengel <lzaengel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 21:21:47 by lzaengel          #+#    #+#             */
-/*   Updated: 2024/01/11 20:51:45 by lzaengel         ###   ########.fr       */
+/*   Updated: 2024/01/11 21:04:23 by lzaengel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,23 @@ void	ft_lstprint(t_list *lst)
 	}
 }
 
+int	ft_lstsize(t_list *lst)
+{
+	t_list	*temp;
+	int		i;
+
+	if (!lst)
+		return (0);
+	temp = lst;
+	i = 1;
+	while (temp -> next)
+	{
+		i++;
+		temp = temp -> next;
+	}
+	return (i);
+}
+
 int	main(int argc, char **argv)
 {
 	int			nbr;
@@ -85,5 +102,6 @@ int	main(int argc, char **argv)
 	}
 	checkdup(list_a);
 	radixsort(&list_a, &list_b);
+	ft_lstprint(list_a);
 	ft_exit(list_a, 0);
 }

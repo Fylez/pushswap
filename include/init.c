@@ -6,7 +6,7 @@
 /*   By: lzaengel <lzaengel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 21:22:45 by lzaengel          #+#    #+#             */
-/*   Updated: 2024/01/11 19:30:12 by lzaengel         ###   ########.fr       */
+/*   Updated: 2024/01/11 21:09:20 by lzaengel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ t_list	*ft_lstlast(t_list *lst)
 t_list	*ft_lstnew(int content)
 {
 	t_list	*new;
-
 
 	new = malloc(sizeof(t_list));
 	if (!new)
@@ -89,4 +88,3 @@ int	ft_atoi( const char *theString, t_list *lst)
 	}
 	return (result * neg);
 }
-

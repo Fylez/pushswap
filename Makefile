@@ -6,7 +6,7 @@
 #    By: lzaengel <lzaengel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/10 23:44:44 by lzaengel          #+#    #+#              #
-#    Updated: 2024/01/11 20:49:07 by lzaengel         ###   ########.fr        #
+#    Updated: 2024/01/11 21:02:19 by lzaengel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,7 @@ SRC = ./include/main.c\
 ./printf/ft_putstr.c \
 ./include/init.c \
 ./include/radix.c \
+./include/radix_utils.c \
 ./instructions/push.c \
 ./instructions/rotate.c \
 ./instructions/reverse_rotate.c \

@@ -6,7 +6,7 @@
 /*   By: lzaengel <lzaengel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 19:31:28 by lzaengel          #+#    #+#             */
-/*   Updated: 2024/01/11 19:31:49 by lzaengel         ###   ########.fr       */
+/*   Updated: 2024/01/11 21:09:02 by lzaengel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,6 @@ void	rb(t_list **lst)
 	ft_printf("rb\n");
 	rotate(lst);
 }
-
-
 
 void	rr(t_list **lst, t_list **lst2)
 {
