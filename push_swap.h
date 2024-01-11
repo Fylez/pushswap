@@ -6,14 +6,14 @@
 /*   By: lzaengel <lzaengel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 18:19:15 by liam              #+#    #+#             */
-/*   Updated: 2024/01/11 00:12:15 by lzaengel         ###   ########.fr       */
+/*   Updated: 2024/01/11 19:32:34 by lzaengel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include "ft_printf.h"
+# include "printf/ft_printf.h"
 //# include "include/libftfin/libft.h"
 
 typedef struct s_list {

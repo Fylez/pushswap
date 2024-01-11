@@ -6,41 +6,39 @@
 #    By: lzaengel <lzaengel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/10 23:44:44 by lzaengel          #+#    #+#              #
-#    Updated: 2024/01/11 20:49:07 by lzaengel         ###   ########.fr        #
+#    Updated: 2024/01/11 19:38:22 by lzaengel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 
-CFLAGS = -Wall -Werror -Wextra
+SRC_DIR = include
+SRC_DIR += printf
+SRC_DIR += include
+SRC_DIR += instructions
 
-SRC = ./include/main.c\
-./printf/ft_printf_hexa.c \
-./printf/ft_printf.c \
-./printf/ft_putchar.c \
-./printf/ft_putnbr.c \
-./printf/ft_putstr.c \
-./include/init.c \
-./include/radix.c \
-./instructions/push.c \
-./instructions/rotate.c \
-./instructions/reverse_rotate.c \
-./instructions/swap.c
-
+SRC = $(addprefix $(SRC_DIR)/, main.c ft_printf_hexa.c ft_printf.c ft_putchar.c ft_putnbr.c ft_putstr.c init.c radix.c push.c rotate.c reverse_rotate.c swap.c)
 
 OBJ = $(SRC:.c=.o)
 
-all : $(NAME)
+FLAGS = -Wall -Wextra -Werror
 
-$(NAME) : $(OBJ)
-			clang -o $(NAME) $(OBJ) $(CFLAGS)
+all: $(NAME)
+	
+$(NAME): $(OBJ)
+	cc $(OBJ) -o $(NAME)
 
-clean :
-			rm -rf $(OBJ)
+%.o: %.c
+	cc -I$(SRC_DIR) -c $(FLAGS) $< -o $@
 
-fclean : clean
-			rm -rf $(NAME)
+clean:
+	$(MAKE) -C $(SRC_DIR) clean
+	rm -f $(OBJ)
 
-re : fclean all
+fclean: clean
+	$(MAKE) -C $(SRC_DIR) fclean
+	rm -f $(NAME)
 
-.PHONY : all clean fclean re
+re: fclean all
+
+.PHONY: all clean fclean re
