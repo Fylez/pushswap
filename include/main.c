@@ -6,30 +6,12 @@
 /*   By: lzaengel <lzaengel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 21:21:47 by lzaengel          #+#    #+#             */
-/*   Updated: 2024/01/11 23:36:41 by lzaengel         ###   ########.fr       */
+/*   Updated: 2024/01/12 13:33:18 by lzaengel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ft_exit(t_list *lst, char *reason)
-{
-	t_list	*next;
-
-	if (lst == NULL)
-	{
-		exit(0);
-	}
-	if (reason)
-		ft_printf ("%s\n", reason);
-	while (lst != NULL)
-	{
-		next = lst->next;
-		free(lst);
-		lst = next;
-	}
-	exit(0);
-}
 
 int	is_sorted(t_list *lst)
 {
@@ -66,21 +48,6 @@ void	checkdup(t_list *lst)
 	}
 }
 
-void	ft_lstprint(t_list *lst)
-{
-	t_list	*temp;
-
-	if (lst == NULL)
-		return ;
-	temp = lst;
-	ft_printf("%d\n", temp->content);
-	while (temp -> next)
-	{
-		temp = temp-> next;
-		ft_printf("%d\n", temp->content);
-	}
-}
-
 int	ft_lstsize(t_list *lst)
 {
 	t_list	*temp;
@@ -96,6 +63,23 @@ int	ft_lstsize(t_list *lst)
 		temp = temp -> next;
 	}
 	return (i);
+}
+
+void	sort(t_list **lst, t_list **lst2)
+{
+	int		size;
+
+	size = ft_lstsize(*lst);
+	if (size == 2)
+		sa(*lst);
+	if (size == 3)
+		three_numbers(lst);
+	if (size == 4 || size == 5)
+	{
+		fourorfive(lst, lst2, size);
+	}
+	if (size > 5)
+		radixsort(lst, lst2);
 }
 
 int	main(int argc, char **argv)
@@ -119,10 +103,7 @@ int	main(int argc, char **argv)
 	checkdup(list_a);
 	if (is_sorted(list_a) == 1)
 		ft_exit(list_a, 0);
-	if (ft_lstsize(list_a) > 3)
-		radixsort(&list_a, &list_b);
-	else
-		three_numbers(&list_a);
-	ft_lstprint(list_a);
+	sort(&list_a, &list_b);
+	//ft_lstprint(list_a);
 	ft_exit(list_a, 0);
 }

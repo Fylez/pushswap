@@ -6,7 +6,7 @@
 #    By: lzaengel <lzaengel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/10 23:44:44 by lzaengel          #+#    #+#              #
-#    Updated: 2024/01/11 23:23:10 by lzaengel         ###   ########.fr        #
+#    Updated: 2024/01/12 13:13:40 by lzaengel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,7 @@ SRC = ./include/main.c\
 ./include/init.c \
 ./include/radix.c \
 ./include/simple.c \
+./include/exit.c \
 ./include/radix_utils.c \
 ./instructions/push.c \
 ./instructions/rotate.c \

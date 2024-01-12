@@ -6,7 +6,7 @@
 /*   By: lzaengel <lzaengel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 18:19:15 by liam              #+#    #+#             */
-/*   Updated: 2024/01/11 23:30:52 by lzaengel         ###   ########.fr       */
+/*   Updated: 2024/01/12 13:12:56 by lzaengel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,9 @@ int		ft_bits(t_list *lst);
 int		ft_min(t_list *lst);
 void	ft_lstsimple(t_list *lst, int min);
 void	ft_lstdesimple(t_list *lst, int min);
-void	three_numbers(t_list **lst);
+void	sort(t_list **lst, t_list **lst2);
 int		is_sorted(t_list *lst);
+void	fill_a(t_list **lst, t_list **lst2);
+void	fourorfive(t_list **lst, t_list **lst2, int size);
+void	three_numbers(t_list **lst);
 #endif
