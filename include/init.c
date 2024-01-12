@@ -6,7 +6,7 @@
 /*   By: lzaengel <lzaengel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 21:22:45 by lzaengel          #+#    #+#             */
-/*   Updated: 2024/01/11 21:09:20 by lzaengel         ###   ########.fr       */
+/*   Updated: 2024/01/12 13:38:22 by lzaengel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ int	ft_atoi( const char *theString, t_list *lst)
 			i++;
 		}
 		else
-			ft_exit(lst, "Invalid characters");
+			ft_exit(lst, "Error");
 	}
 	return (result * neg);
 }

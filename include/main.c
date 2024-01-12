@@ -6,7 +6,7 @@
 /*   By: lzaengel <lzaengel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 21:21:47 by lzaengel          #+#    #+#             */
-/*   Updated: 2024/01/12 13:33:18 by lzaengel         ###   ########.fr       */
+/*   Updated: 2024/01/12 13:37:55 by lzaengel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	checkdup(t_list *lst)
 		while (next)
 		{
 			if (tocheck -> content == next->content)
-				ft_exit(lst, "Duplicate numbers");
+				ft_exit(lst, "Error");
 			next = next->next;
 		}
 		tocheck = tocheck -> next;
